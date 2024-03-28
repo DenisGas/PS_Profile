@@ -3,13 +3,12 @@ My collection of alias and functions for PowerShell
 
 ## How use 
 
-You need copy comand in you $PROFILE 
-
+You need copy functions in you $PROFILE 
 
 
 ## Analog VScode comand "code" for Visual Studio
 
-### Comand
+### Function
 
 ```powershell
 
