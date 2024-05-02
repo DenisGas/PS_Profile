@@ -1,6 +1,23 @@
 # PS_Profile
 My collection of alias and functions for PowerShell
 
+## Beautiful terminal
+
+![image](https://github.com/DenisGas/PS_Profile/assets/81939899/edad5c5e-3d80-4d2e-9ae4-de8c7d2209a0)
+
+### Links
+
+[folder icons](https://www.powershellgallery.com/packages/Terminal-Icons/0.11.0)
+
+#### Prompt theme engine for shell.
+
+[ohmyposh](https://ohmyposh.dev/docs/installation/windows)
+
+OR
+
+[starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+
+
 ## How use 
 
 You need copy functions in you $PROFILE 
