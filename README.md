@@ -19,7 +19,10 @@ OR
 
 [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 
+#### Font
+I use [firacode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip) 
 
+other options [nerdfonts](https://www.nerdfonts.com/font-downloads)
 ## How use 
 
 You need copy functions in you $PROFILE 
