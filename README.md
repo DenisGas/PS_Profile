@@ -9,7 +9,7 @@ My collection of alias and functions for PowerShell
 
 [windows terminal](https://apps.microsoft.com/detail/9n0dx20hk701)
 
-[folder icons](https://www.powershellgallery.com/packages/Terminal-Icons/0.11.0)
+[folder icons](https://github.com/devblackops/Terminal-Icons)
 
 #### Prompt theme engine for shell.
 
