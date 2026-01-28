@@ -288,3 +288,73 @@ vs -Directory "C:\Users\user\repos"
 ```
 
 This command launches Visual Studio and loads the specified directory.
+
+## Run repos npm/pnpm script
+
+### !!!IMPORTANT!!! need fzf
+
+```powershell
+winget install junegunn.fzf
+```
+
+### How use comand
+
+npm comand
+```powershell
+nps
+```
+
+OR 
+
+pnpm comand
+```powershell
+pnps
+```
+
+preview
+<img width="1072" height="494" alt="image" src="https://github.com/user-attachments/assets/baa65ada-32f3-4a14-af4e-81477fbf7dec" />
+
+
+
+
+
+```powershell
+function Select-PackageScript {
+    param (
+        [Parameter(Mandatory)]
+        [ValidateSet("npm", "pnpm")]
+        [string]$Runner
+    )
+
+    $packagePath = Join-Path (Get-Location) "package.json"
+
+    if (-not (Test-Path $packagePath)) {
+        Write-Host "package.json не знайдено" -ForegroundColor Red
+        return
+    }
+
+    $json = Get-Content $packagePath -Raw | ConvertFrom-Json
+
+    if (-not $json.scripts) {
+        Write-Host "scripts відсутні" -ForegroundColor Yellow
+        return
+    }
+
+    $script = $json.scripts.PSObject.Properties.Name |
+        fzf --prompt="$Runner run > " --height=40% --reverse
+
+    if ($script) {
+        Write-Host "▶ $Runner run $script" -ForegroundColor Green
+        & $Runner run $script
+    }
+}
+function npm-scripts {
+    Select-PackageScript -Runner "npm"
+}
+function pnpm-scripts {
+    Select-PackageScript -Runner "pnpm"
+}
+
+Set-Alias -Name nps -Value npm-scripts -Option AllScope;
+Set-Alias -Name pnps -Value pnpm-scripts -Option AllScope;
+```
